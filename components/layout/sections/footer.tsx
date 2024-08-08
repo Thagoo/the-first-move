@@ -4,61 +4,82 @@ import Link from "next/link";
 
 export const FooterSection = () => {
   return (
-    <footer id="footer" className="container py-24 sm:py-32">
-      <div className="p-10 bg-card border border-secondary rounded-2xl">
+    <footer id="footer" className="container py-10 sm:py-32">
+      <div className="md:p-10 p-4 bg-card border border-secondary rounded-2xl">
+        {/* <div className="pb-4">
+          <h1 className="text-xl">Plan your dream event with us!</h1>
+          <p>The best in class planning and execution experience guaranteed!</p>
+        </div> */}
         <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
           <div className="col-span-full xl:col-span-2">
             <Link href="#" className="flex font-bold items-center">
-              <ChevronsDownIcon className="w-9 h-9 mr-2 bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg border border-secondary" />
-
-              <h3 className="text-2xl">Shadcn</h3>
+              <h3 className="text-2xl">TheFirstMove</h3>
             </Link>
           </div>
 
           <div className="flex flex-col gap-2">
             <h3 className="font-bold text-lg">Contact</h3>
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Github
+              <Link
+                href="mailto:hi@thefirstmove.in"
+                className="opacity-60 hover:opacity-100"
+              >
+                hi@thefirstmove.in
               </Link>
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Twitter
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Instagram
+              <Link
+                href="tele:+916360662716"
+                className="opacity-60 hover:opacity-100"
+              >
+                +91 63606 62716
               </Link>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Platforms</h3>
+            <h3 className="font-bold text-lg">Services</h3>
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                iOS
-              </Link>
+              <p className="opacity-60 ">Wedding Planning</p>
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Android
-              </Link>
+              <p className="opacity-60 ">Proposal </p>
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Web
-              </Link>
+              <p className="opacity-60 ">Photography</p>
+            </div>
+            <div>
+              <p className="opacity-60 ">Make Up Artists</p>
+            </div>
+            <div>
+              <p className="opacity-60 ">Personal Shopper</p>
+            </div>
+            <div>
+              <p className="opacity-60 ">Cocktail Events</p>
+            </div>
+            <div>
+              <p className="opacity-60 ">Birthday Parties</p>
+            </div>
+            <div>
+              <p className="opacity-60 "> Sit Down Dinners</p>
             </div>
           </div>
 
           <div className="flex flex-col gap-2">
             <h3 className="font-bold text-lg">Help</h3>
+            <div>
+              <Link href="#" className="opacity-60 hover:opacity-100">
+                About Us
+              </Link>
+            </div>
+            <div>
+              <Link href="#" className="opacity-60 hover:opacity-100">
+                Blogs
+              </Link>
+            </div>
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
                 Contact Us
@@ -81,28 +102,21 @@ export const FooterSection = () => {
           <div className="flex flex-col gap-2">
             <h3 className="font-bold text-lg">Socials</h3>
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Twitch
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Discord
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Dribbble
+              <Link
+                href="@thefirsttmove.in"
+                className="opacity-60 hover:opacity-100"
+              >
+                Instragram
               </Link>
             </div>
           </div>
         </div>
 
         <Separator className="my-6" />
-        <section className="">
-          <h3 className="">
+        <section className="opacity-40">
+          Disclaimer - The data you submit will be used by our team to contact
+          you and help you plan your celebration
+          {/* <h3 className="">
             &copy; 2024 Designed and developed by
             <Link
               target="_blank"
@@ -111,7 +125,7 @@ export const FooterSection = () => {
             >
               Leo Miranda
             </Link>
-          </h3>
+          </h3> */}
         </section>
       </div>
     </footer>

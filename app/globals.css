@@ -4,6 +4,7 @@
 
 html {
   scroll-behavior: smooth;
+  transition: 0.5s;
 }
 
 /* *=========== Default theme =========== */
@@ -76,7 +77,7 @@ html {
 /* *=========== Orange theme =========== */
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    --background: 0 0% 98%;
     --foreground: 20 14.3% 4.1%;
 
     --card: 0 0% 100%;
@@ -85,7 +86,7 @@ html {
     --popover: 0 0% 100%;
     --popover-foreground: 20 14.3% 4.1%;
 
-    --primary: 24.6 95% 53.1%;
+    --primary: 189 36% 56%;
     --primary-foreground: 60 9.1% 97.8%;
 
     --secondary: 60 4.8% 95.9%;
@@ -116,7 +117,7 @@ html {
     --popover: 20 14.3% 4.1%;
     --popover-foreground: 60 9.1% 97.8%;
 
-    --primary: 20.5 90.2% 48.2%;
+    --primary: 41 100% 59%;
     --primary-foreground: 60 9.1% 97.8%;
 
     --secondary: 12 6.5% 15.1%;
@@ -152,4 +153,121 @@ html {
   body {
     @apply bg-background text-foreground;
   }
+}
+
+.swiper-slide {
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Example Tailwind CSS classes for the components */
+.fixed-container {
+  @apply h-screen flex items-center justify-center;
+}
+
+.fixed-content {
+  @apply text-center mx-auto;
+}
+
+.step-content {
+  @apply transition-all duration-300 ease-in-out;
+}
+
+.active-step {
+  @apply text-primary font-bold;
+}
+
+.inactive-step {
+  @apply text-gray-500;
+}
+
+.image {
+  --n: 3; /* number of tiles*/
+  --d: 20px; /* the distance of top/bottom movement */
+  --s: 1.1; /* control the horizontal distance  1>= (1:no distance)*/
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 30px;
+  position: relative;
+  background-size: 0 0;
+  transition: 0.5s;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
+.image > * {
+  position: absolute;
+  top: var(--d);
+  left: 0;
+  right: 0;
+  bottom: var(--d);
+  overflow: hidden;
+  background-image: inherit;
+  background-size: cover;
+  -webkit-mask: linear-gradient(#fff, #fff) no-repeat;
+  -webkit-mask-size: calc(100% / var(--n) + 1px) 100%;
+  -webkit-mask-position: var(--p) 50%;
+  mask: linear-gradient(#fff, #fff) no-repeat;
+  mask-size: calc(100% / var(--n) + 1px) 100%;
+  mask-position: var(--p) 50%;
+  transition: inherit;
+  transform-origin: var(--p) 50%;
+}
+
+/* we define as many as possible to cover the max value used */
+.image > :nth-child(1) {
+  --p: calc(0 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(2) {
+  --p: calc(1 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(3) {
+  --p: calc(2 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(4) {
+  --p: calc(3 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(5) {
+  --p: calc(4 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(6) {
+  --p: calc(5 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(7) {
+  --p: calc(6 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(8) {
+  --p: calc(7 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(9) {
+  --p: calc(8 * 100% / (var(--n) - 1));
+}
+.image > :nth-child(10) {
+  --p: calc(9 * 100% / (var(--n) - 1));
+}
+/**/
+
+.image > :nth-child(odd) {
+  transform: translateY(var(--d)) scale(calc(1 / var(--s)));
+}
+.image > :nth-child(even) {
+  transform: translateY(calc(-1 * var(--d))) scale(calc(1 / var(--s)));
+}
+.image {
+  transform: scale(var(--s));
 }

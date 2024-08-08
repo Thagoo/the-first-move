@@ -1,25 +1,27 @@
-import { BenefitsSection } from "@/components/layout/sections/benefits";
+import Achievements from "@/components/layout/sections/achievements";
 import { FAQSection } from "@/components/layout/sections/faq";
 import { FeaturesSection } from "@/components/layout/sections/features";
 import { FooterSection } from "@/components/layout/sections/footer";
 import { HeroSection } from "@/components/layout/sections/hero";
-import { PricingSection } from "@/components/layout/sections/pricing";
-import { ServicesSection } from "@/components/layout/sections/services";
-import { SponsorsSection } from "@/components/layout/sections/sponsors";
-import { TeamSection } from "@/components/layout/sections/team";
-import { TestimonialSection } from "@/components/layout/sections/testimonial";
+import ProcedureSection from "@/components/layout/sections/procedure";
+
+import WhyChooseUsSection from "@/components/layout/sections/why-choose-us";
 
 export default function Home() {
   return (
     <>
       <HeroSection />
-      <SponsorsSection />
-      <BenefitsSection />
       <FeaturesSection />
+      <Achievements />
+      {/* <ScrollSection /> */}
+      <ProcedureSection />
+      <WhyChooseUsSection />
+      {/* <BenefitsSection />
+
       <ServicesSection />
       <TestimonialSection />
-      <TeamSection />
-      <PricingSection />
+      <TeamSection /> */}
+      {/* <PricingSection />*/}
       <FAQSection />
       <FooterSection />
     </>

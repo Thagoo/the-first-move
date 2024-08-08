@@ -31,21 +31,19 @@ interface RouteProps {
 interface FeatureProps {
   title: string;
   description: string;
+  url: string;
 }
 
 const routeList: RouteProps[] = [
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: "#features",
+    label: "Services",
   },
   {
     href: "#team",
-    label: "Team",
+    label: "About Us",
   },
-  {
-    href: "#contact",
-    label: "Contact",
-  },
+
   {
     href: "#faq",
     label: "FAQ",
@@ -54,28 +52,33 @@ const routeList: RouteProps[] = [
 
 const featureList: FeatureProps[] = [
   {
-    title: "Showcase Your Value ",
-    description: "Highlight how your product solves user problems.",
+    title: "Proposal Planning",
+    description:
+      "Every love story is unique and so should your proposal. We'll handle every detail, big or small.",
+    url: "/proposal",
   },
   {
-    title: "Build Trust",
+    title: "Wedding Planning",
     description:
-      "Leverages social proof elements to establish trust and credibility.",
+      "Let us handle the chaos, from finding the perfect venue to crafting unforgettable moments.",
+    url: "#",
   },
+
   {
-    title: "Capture Leads",
+    title: "Photography",
     description:
-      "Make your lead capture form visually appealing and strategically.",
+      "Our skilled photographers capture every emotion and detail, creating timeless images you'll cherish forever.",
+    url: "#",
   },
 ];
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-inner bg-opacity-15 w-[90%] md:w-[70%] lg:w-[75%] lg:max-w-screen-xl top-5 mx-auto sticky border border-secondary z-40 rounded-2xl flex justify-between items-center p-2 bg-card">
+    <header className="drop-shadow-md bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center px-4 py-2 bg-transparent">
       <Link href="/" className="font-bold text-lg flex items-center">
         <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-        Shadcn
+        TheFirstMove
       </Link>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
@@ -96,7 +99,7 @@ export const Navbar = () => {
                 <SheetTitle className="flex items-center">
                   <Link href="/" className="flex items-center">
                     <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                    Shadcn
+                    TheFirstMove
                   </Link>
                 </SheetTitle>
               </SheetHeader>
@@ -119,7 +122,12 @@ export const Navbar = () => {
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2" />
 
-              <ToggleTheme />
+              <Button
+                variant="secondary"
+                className=" font-bold rounded-full border-[1px] border-[#65ABB7]"
+              >
+                <Link href="tel:+916360662716">Contact Us</Link>
+              </Button>
             </SheetFooter>
           </SheetContent>
         </Sheet>
@@ -129,35 +137,39 @@ export const Navbar = () => {
       <NavigationMenu className="hidden lg:block mx-auto">
         <NavigationMenuList>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="bg-card text-base">
-              Features
+            {/* <NavigationMenuTrigger className="bg-transparent text-base">
+              Services
             </NavigationMenuTrigger>
             <NavigationMenuContent>
               <div className="grid w-[600px] grid-cols-2 gap-5 p-4">
                 <Image
-                  src="https://avatars.githubusercontent.com/u/75042455?v=4"
+                  src="/icons/procedure/3.svg"
                   alt="RadixLogo"
-                  className="h-full w-full rounded-md object-cover"
-                  width={600}
-                  height={600}
+                  className="h-full w-full rounded-md"
+                  width={0}
+                  height={0}
                 />
                 <ul className="flex flex-col gap-2">
-                  {featureList.map(({ title, description }) => (
+                  {featureList.map(({ title, description, url }) => (
                     <li
                       key={title}
                       className="rounded-md p-3 text-sm hover:bg-muted"
                     >
-                      <p className="mb-1 font-semibold leading-none text-foreground">
-                        {title}
-                      </p>
-                      <p className="line-clamp-2 text-muted-foreground">
-                        {description}
-                      </p>
+                      <NavigationMenuLink asChild>
+                        <Link href={url}>
+                          <p className="mb-1 font-semibold leading-none text-foreground">
+                            {title}
+                          </p>
+                          <p className="line-clamp-2 text-muted-foreground">
+                            {description}
+                          </p>
+                        </Link>
+                      </NavigationMenuLink>
                     </li>
                   ))}
                 </ul>
               </div>
-            </NavigationMenuContent>
+            </NavigationMenuContent> */}
           </NavigationMenuItem>
 
           <NavigationMenuItem>
@@ -173,16 +185,11 @@ export const Navbar = () => {
       </NavigationMenu>
 
       <div className="hidden lg:flex">
-        <ToggleTheme />
-
-        <Button asChild size="sm" variant="ghost" aria-label="View on GitHub">
-          <Link
-            aria-label="View on GitHub"
-            href="https://github.com/nobruf/shadcn-landing-page.git"
-            target="_blank"
-          >
-            <Github className="size-5" />
-          </Link>
+        <Button
+          variant="secondary"
+          className="bg-transparent transition ease-in-out delay-150 hover:bg-primary duration-200 rounded-full border-primary border  "
+        >
+          <Link href="tel:+916360662716">Contact Us</Link>
         </Button>
       </div>
     </header>

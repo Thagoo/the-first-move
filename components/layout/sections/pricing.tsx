@@ -73,19 +73,14 @@ const plans: PlanProps[] = [
 
 export const PricingSection = () => {
   return (
-    <section className="container py-24 sm:py-32">
-      <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
-        Pricing
-      </h2>
-
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
-        Get unlimitted access
+    <section className="container py-10">
+      <h2 className="text-3xl md:text-4xl text-center font-bold">
+        We help you make The First Move!
       </h2>
 
       <h3 className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground pb-14">
-        Lorem ipsum dolor sit amet consectetur adipisicing reiciendis.
+        Turn your dream of going down on one knee, into a reality with us!
       </h3>
-
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-4">
         {plans.map(
           ({ title, popular, price, description, buttonText, benefitList }) => (
