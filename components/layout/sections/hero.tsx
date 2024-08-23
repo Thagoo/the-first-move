@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 import EventForm from "../form";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { DM_Sans } from "next/font/google";
-const font = DM_Sans({ subsets: ["latin"], weight: "400" });
+const font = DM_Sans({ subsets: ["latin"], weight: "600" });
 
 export const HeroSection = () => {
   return (
@@ -31,8 +31,8 @@ export const HeroSection = () => {
             src={"/icons/peacock.webp"}
             alt="dashboard"
           /> */}
-              <div className="max-w-screen-md mx-auto text-center text-3xl md:text-7xl font-medium">
-                <h1 className={font.className}>
+              <div className="max-w-screen-lg mx-auto text-center text-3xl md:text-7xl font-semibold">
+                <h1 className={`${font.className}`}>
                   Crafting Unforgettable Luxury Celebrations
                 </h1>
               </div>
