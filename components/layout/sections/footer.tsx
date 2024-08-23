@@ -4,21 +4,18 @@ import Link from "next/link";
 
 export const FooterSection = () => {
   return (
-    <footer id="footer" className="container py-10 sm:py-32">
-      <div className="md:p-10 p-4 bg-card border border-secondary rounded-2xl">
-        {/* <div className="pb-4">
+    <footer
+      id="footer"
+      className=" py-10 bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100"
+    >
+      <div className="conatiner mx-auto md:p-10 p-4 rounded-2xl">
+        <div className="pb-4 md:pb-8">
           <h1 className="text-xl">Plan your dream event with us!</h1>
           <p>The best in class planning and execution experience guaranteed!</p>
-        </div> */}
-        <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
-          <div className="col-span-full xl:col-span-2">
-            <Link href="#" className="flex font-bold items-center">
-              <h3 className="text-2xl">TheFirstMove</h3>
-            </Link>
-          </div>
-
+        </div>
+        <div className=" grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8">
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Contact</h3>
+            <h3 className="font-medium text-lg">Contact</h3>
             <div>
               <Link
                 href="mailto:hi@thefirstmove.in"
@@ -39,7 +36,7 @@ export const FooterSection = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Services</h3>
+            <h3 className="font-medium text-lg">Services</h3>
             <div>
               <p className="opacity-60 ">Wedding Planning</p>
             </div>
@@ -69,7 +66,7 @@ export const FooterSection = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Help</h3>
+            <h3 className="font-medium text-lg">Help</h3>
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
                 About Us
@@ -100,13 +97,13 @@ export const FooterSection = () => {
           </div>
 
           <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-lg">Socials</h3>
+            <h3 className="font-medium text-lg">Socials</h3>
             <div>
               <Link
                 href="@thefirsttmove.in"
                 className="opacity-60 hover:opacity-100"
               >
-                Instragram
+                Instagram
               </Link>
             </div>
           </div>

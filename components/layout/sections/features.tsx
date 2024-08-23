@@ -74,7 +74,7 @@ export const FeaturesSection = () => {
         Features
       </h2>
 
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
+      <h2 className="text-3xl md:text-4xl text-center font-medium mb-4">
         What Makes Us Different
       </h2>
 
@@ -91,7 +91,7 @@ export const FeaturesSection = () => {
           src={"/icons/divider-bottom.svg"}
           alt="dashboard"
         />
-        <h1 className="text-3xl md:text-4xl text-center font-bold mb-4 text-nowrap">
+        <h1 className="text-3xl md:text-4xl text-center font-medium mb-4 text-nowrap">
           Events We Plan
         </h1>
 

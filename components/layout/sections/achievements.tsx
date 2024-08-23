@@ -30,7 +30,7 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="container bg-gradient-to-b from-transparent via-green-100 w-full py-10 flex flex-col justify-center items-center gap-10 md:gap-10"
+      className="container w-full flex flex-col justify-center items-center gap-10 md:gap-10"
     >
       <div className="grid md:grid-cols-3 md:gap-2 gap-10 px-5">
         {achievementList.map(({ icon, title, description }) => (
@@ -43,9 +43,9 @@ export default function Achievements() {
               width={1500}
               height={1500}
               alt="icon"
-              className="z-20 rounded-full w-24 h-auto"
+              className="z-20 rounded-full w-24 h-auto ring ring-primary"
             />
-            <div className="absolute w-24 -inset-1 blur-lg bg-gradient-to-r from-[#F7BBAA] to-[#F7BBAA] z-10 rounded-full"></div>
+            <div className="absolute w-24 -inset-1 blur-lg z-10 rounded-full"></div>
             <div>
               <CardTitle className="text-4xl">{title}</CardTitle>
 

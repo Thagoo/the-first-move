@@ -12,32 +12,33 @@ interface WhyChooseUsProps {
 const featureList: WhyChooseUsProps[] = [
   {
     icon: "/icons/why-choose-us/image.svg",
-    title: "Young and Talented Team",
+    title: "Competitive Prices Offered",
     description:
-      "Our celebration experts have some of the most modern ideas for your next event ",
+      "We care about your pocket as much as you do! We are the most affordable in the market!",
   },
   {
-    icon: "/icons/why-choose-us/image_1.svg",
+    icon: "/icons/why-choose-us/image_2.svg",
     title: "Exclusive Celebration Services ",
     description:
       "Don’t worry, all the fancy services offered by event planners are offered by us!",
   },
+
   {
-    icon: "/icons/why-choose-us/image_2.svg",
-    title: "Competitive Prices Offered",
+    icon: "/icons/why-choose-us/image_1.svg",
+    title: "Young and Talented Team",
     description:
-      "We care about your pocket as much as you do! We are the most affordable in the market!",
+      "Our celebration experts have some of the most modern ideas for your next event ",
   },
 ];
 
 export default function WhyChooseUsSection() {
   return (
-    <section id="whyChooseUs" className="container py-10 mx-auto">
+    <section id="whyChooseUs" className="container mx-auto">
       {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
         WhyChooseUs
       </h2>
 
-      <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
+      <h2 className="text-3xl md:text-4xl text-center font-medium mb-4">
         What Makes Us Different
       </h2>
 
@@ -55,7 +56,7 @@ export default function WhyChooseUsSection() {
             src={"/icons/divider-bottom.svg"}
             alt="dashboard"
           />
-          <h1 className="text-3xl md:text-4xl text-center font-bold mb-4 text-nowrap">
+          <h1 className="text-2xl md:text-4xl text-center font-medium mb-4 text-nowrap">
             Why Choose Us
           </h1>
 
@@ -67,7 +68,7 @@ export default function WhyChooseUsSection() {
             alt="dashboard"
           />
         </div>
-        <p className="md:w-1/2 mx-auto text-xl text-center text-muted-foreground mb-8">
+        <p className="md:w-1/2 mx-auto md:text-xl text-center text-muted-foreground mb-8">
           Top 3 reasons why our team is the best for your next event
         </p>
       </div>

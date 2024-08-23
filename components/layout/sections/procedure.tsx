@@ -4,8 +4,7 @@ import React, { useRef, useState } from "react";
 import { Scrollama, Step } from "react-scrollama";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import { toast } from "@/components/ui/use-toast";
-import { Toaster } from "@/components/ui/toaster";
+import { motion } from "framer-motion";
 
 type StepsData = {
   title: string;
@@ -68,8 +67,8 @@ const ProcedureSection = () => {
   //   }, [data]);
 
   return (
-    <div className="relative h-[300vh]">
-      <div className="invisible h-[150vh] absolute flex flex-col jusitfy-between">
+    <div className="relative min-h-[400vh]">
+      <div className="invisible h-[400vh] absolute flex flex-col jusitfy-between">
         <Scrollama
           onStepEnter={onStepEnter}
           onStepExit={onStepExit}
@@ -94,8 +93,8 @@ const ProcedureSection = () => {
         </Scrollama>
       </div>
 
-      <div className="sticky md:top-10 top-0 py-20 h-screen">
-        <div className="flex flex-col gap-2 items-center px-5">
+      <div className="sticky md:top-0 top-10 flex flex-col md:min-h-screen gap-4 md:gap-0">
+        <div className="pt-10 md:pt-24 flex flex-col gap-2 items-center px-5 ">
           <div className="w-full flex justify-center gap-2 md:gap-4 ">
             <Image
               width={0}
@@ -104,7 +103,7 @@ const ProcedureSection = () => {
               src={"/icons/divider-bottom.svg"}
               alt="dashboard"
             />
-            <h1 className="text-2xl md:text-4xl font-bold mb-4 text-nowrap">
+            <h1 className="text-2xl md:text-4xl font-medium text-nowrap">
               Where to Start
             </h1>
 
@@ -116,17 +115,20 @@ const ProcedureSection = () => {
               alt="dashboard"
             />
           </div>
-          <p className="md:w-1/2 mx-auto text-center text-muted-foreground">
+          <p className=" md:text-xl text-center text-muted-foreground">
             Booking your celebration was never this easy!
           </p>
         </div>
-        <div className="flex flex-col-reverse md:flex-row md:justify-between justify-start md:items-start px-5 md:px-20 mt-2 md:mt-10 w-full md:gap-0 gap-6 md:min-h-screen">
-          <div className="flex flex-col justify-center w-full">
+        <div className="md:flex-1 grid md:grid-cols-2 md:pt-20 px-5 md:px-20 w-full gap-2 md:gap-0">
+          <div className="md:order-1 order-2 flex flex-col w-full animate-in duration-300">
             {stepsData.map((item, i) => (
-              <section key={i} className=" flex gap-5 relative pb-10 md:pb-14 ">
+              <section
+                key={i}
+                className="animate-in duration-200 flex gap-5 relative pb-10 md:pb-16 "
+              >
                 {i <= 1 && (
                   <div
-                    className={`animate-in duration-200 ease-out absolute top-8 z-0 h-full left-4 md:left-6 w-0.5 ${
+                    className={`animate-in duration-200 absolute top-8 z-0 h-full left-4 md:left-6 w-0.5 ${
                       step >= item.id ? "bg-primary" : "bg-slate-200"
                     }`}
                     aria-hidden="true"
@@ -141,36 +143,45 @@ const ProcedureSection = () => {
                     } `}
                   >
                     <h1
-                      className="animate-pulse md:text-4xl text-lg text-black self-center flex"
+                      className="animate-pulse md:text-3xl text-lg text-black self-center flex"
                       aria-hidden="true"
                     >
                       {i + 1}
                     </h1>
                   </div>
                 </div>
-                <div>
-                  <h1
-                    className={`transition-all transform-gpu ease-in-out duration-300  ${
-                      step == item.id
-                        ? "md:text-4xl text-2xl font-medium"
-                        : "md:text-2xl text-xl"
-                    }`}
-                    style={{ transform: "translate3d(0, 0, 0)" }}
+                <div className="md:max-w-md">
+                  <motion.div
+                    className="md:text-nowrap"
+                    initial={false}
+                    animate={step == item.id ? "large" : "small"}
+                    variants={{
+                      large: {
+                        fontSize: "3vh",
+                      },
+                      small: {
+                        fontSize: "2.5vh",
+                      },
+                    }}
+                    transition={{ duration: 0.3 }} // adjust the duration as needed
                   >
-                    {item.title}
-                  </h1>
-
-                  {step == item.id && (
-                    <p className="animate-in fade-in-20 animate-out leading-7 text-gray-900 md:text-lg">
-                      {item.desc}
-                    </p>
-                  )}
+                    <h1>{item.title}</h1>
+                  </motion.div>
+                  <p
+                    className={`transition-all duration-300 ease-in-out leading-7 text-muted-foreground md:text-lg ${
+                      step == item.id
+                        ? "max-h-full opacity-100"
+                        : "max-h-0 opacity-0 "
+                    }`}
+                  >
+                    {item.desc}
+                  </p>
                 </div>
               </section>
             ))}
           </div>
 
-          <div>
+          <div className="md:order-2 order-1">
             <Swiper
               onSwiper={(swiper) => {
                 swiperRef.current = swiper;

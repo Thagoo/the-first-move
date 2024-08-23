@@ -75,8 +75,8 @@ const featureList: FeatureProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="drop-shadow-md bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center px-4 py-2 bg-transparent">
-      <Link href="/" className="font-bold text-lg flex items-center">
+    <header className="shadow-md bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center px-4 py-2 bg-transparent">
+      <Link href="/" className="font-medium text-lg flex items-center">
         <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
         TheFirstMove
       </Link>
@@ -124,9 +124,9 @@ export const Navbar = () => {
 
               <Button
                 variant="secondary"
-                className=" font-bold rounded-full border-[1px] border-[#65ABB7]"
+                className=" font-medium rounded-full border-[1px] border-[#65ABB7]"
               >
-                <Link href="tel:+916360662716">Contact Us</Link>
+                <Link href="https://wa.link/oij5rd">Contact Us</Link>
               </Button>
             </SheetFooter>
           </SheetContent>
@@ -157,7 +157,7 @@ export const Navbar = () => {
                     >
                       <NavigationMenuLink asChild>
                         <Link href={url}>
-                          <p className="mb-1 font-semibold leading-none text-foreground">
+                          <p className="mb-1 font-medium leading-none text-foreground">
                             {title}
                           </p>
                           <p className="line-clamp-2 text-muted-foreground">
@@ -189,7 +189,7 @@ export const Navbar = () => {
           variant="secondary"
           className="bg-transparent transition ease-in-out delay-150 hover:bg-primary duration-200 rounded-full border-primary border  "
         >
-          <Link href="tel:+916360662716">Contact Us</Link>
+          <Link href="https://wa.link/oij5rd">Contact Us</Link>
         </Button>
       </div>
     </header>

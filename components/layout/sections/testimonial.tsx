@@ -84,7 +84,7 @@ export const TestimonialSection = () => {
           Testimonials
         </h2>
 
-        <h2 className="text-3xl md:text-4xl text-center font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl text-center font-medium mb-4">
           Hear What Our 1000+ Clients Say
         </h2>
       </div>

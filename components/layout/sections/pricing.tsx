@@ -74,7 +74,7 @@ const plans: PlanProps[] = [
 export const PricingSection = () => {
   return (
     <section className="container py-10">
-      <h2 className="text-3xl md:text-4xl text-center font-bold">
+      <h2 className="text-3xl md:text-4xl text-center font-medium">
         We help you make The First Move!
       </h2>
 
@@ -100,7 +100,7 @@ export const PricingSection = () => {
                 </CardDescription>
 
                 <div>
-                  <span className="text-3xl font-bold">${price}</span>
+                  <span className="text-3xl font-medium">${price}</span>
                   <span className="text-muted-foreground"> /month</span>
                 </div>
               </CardHeader>

@@ -36,10 +36,10 @@ const serviceList: ServicesProps[] = [
 
 const Services = () => {
   return (
-    <section id="services" className="container py-20 space-y-10">
+    <section id="services" className="container py-10 space-y-10">
       <div className="max-w-lg mx-auto text-center ">
-        <h1 className="text-2xl md:text-4xl font-bold">
-          <span className="text-transparent bg-gradient-to-r from-[#F7BBAA] to-[#F7BBAA] via-primary dark:from-[hsl(16,100%,59%)] bg-clip-text font-bold px-2">
+        <h1 className="text-2xl md:text-4xl font-medium">
+          <span className="text-transparent bg-gradient-to-r from-[#F7BBAA] to-[#F7BBAA] via-primary dark:from-[hsl(16,100%,59%)] bg-clip-text font-medium px-2">
             Personalized Services
           </span>{" "}
           for your Unique Love Story

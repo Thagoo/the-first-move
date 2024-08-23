@@ -5,10 +5,12 @@ import { cn } from "@/lib/utils";
 
 import EventForm from "../form";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
+import { DM_Sans } from "next/font/google";
+const font = DM_Sans({ subsets: ["latin"], weight: "400" });
 
 export const HeroSection = () => {
   return (
-    <section className="container w-full relative bg-gradient-to-b from-transparent via-cyan-50">
+    <section className="container relative bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100">
       <ParallaxProvider>
         <Parallax speed={-10} opacity={[2, 0]}>
           <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20">
@@ -29,26 +31,10 @@ export const HeroSection = () => {
             src={"/icons/peacock.webp"}
             alt="dashboard"
           /> */}
-              <div className="max-w-screen-md mx-auto text-center text-3xl md:text-6xl font-bold">
-                <h1>
-                  Crafting Unforgettable
-                  <span
-                    className={cn(
-                      "text-transparent bg-gradient-to-r from-black to-black via-primary dark:from-[hsl(16,100%,59%)] bg-clip-text font-bold px-2"
-                    )}
-                  >
-                    {" "}
-                    Luxury
-                  </span>
-                  Celebrations
+              <div className="max-w-screen-md mx-auto text-center text-3xl md:text-7xl font-medium">
+                <h1 className={font.className}>
+                  Crafting Unforgettable Luxury Celebrations
                 </h1>
-              </div>
-              <p className="max-w-screen-sm mx-auto md:text-xl text-muted-foreground">
-                {`We're more than just a tool, we're a community of passionate
-            creators. Get access to exclusive resources, tutorials, and support.`}
-              </p>
-              <div className="space-y-4 md:space-y-0 md:space-x-4">
-                <EventForm showTrigger={true} />
               </div>
             </div>
 
@@ -67,6 +53,9 @@ export const HeroSection = () => {
           </div>
         </Parallax>
       </ParallaxProvider>
+      <div className="space-y-4 md:space-y-0 md:space-x-4">
+        <EventForm showTrigger={true} />
+      </div>
     </section>
   );
 };

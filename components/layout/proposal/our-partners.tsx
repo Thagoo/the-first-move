@@ -5,7 +5,7 @@ import { SponsorsSection } from "../sections/sponsors";
 export default function OurPartners() {
   return (
     <div className="">
-      <div className="w-full flex justify-center items-center gap-2 md:gap-4">
+      <div className="w-full flex justify-center items-center gap-2 md:gap-4 py-10">
         <Image
           width={0}
           height={0}
@@ -13,7 +13,7 @@ export default function OurPartners() {
           src={"/icons/divider-bottom.svg"}
           alt="dashboard"
         />
-        <h1 className="text-3xl md:text-4xl text-center font-bold mb-4">
+        <h1 className="text-3xl md:text-4xl text-center font-medium">
           Our Partners
         </h1>
 

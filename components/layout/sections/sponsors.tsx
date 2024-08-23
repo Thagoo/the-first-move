@@ -15,52 +15,52 @@ const sponsors: sponsorsProps[] = [
     icon: "/icons/marquee/image_1.svg",
     name: "Acmebrand",
   },
+  {
+    icon: "/icons/marquee/image.svg",
+    name: "Acmebrand",
+  },
 
   {
-    icon: "/icons/marquee/image_3.svg",
+    icon: "/icons/marquee/image_4.svg",
     name: "Acmesponsor",
   },
 
   {
-    icon: "/icons/marquee/image_5.svg",
+    icon: "/icons/marquee/image_6.svg",
     name: "Acme",
   },
   {
-    icon: "/icons/marquee/image_6.svg",
+    icon: "/icons/marquee/image_8.svg",
     name: "Accmee",
   },
   {
-    icon: "/icons/marquee/image_7.svg",
+    icon: "/icons/marquee/image_9.svg",
     name: "Acmetech",
   },
 ];
 
 export const SponsorsSection = () => {
   return (
-    <section id="sponsors" className="max-w-[75%] mx-auto pb-20">
+    <section id="sponsors" className="w-full">
       {/* <h2 className="text-lg md:text-xl text-center mb-6">
         Our Platinum Sponsors
       </h2> */}
 
-      <div className="mx-auto">
+      <div className="">
         <Marquee
           className="gap-[3rem]"
           fade
           innerClassName="gap-[3rem]"
           pauseOnHover
         >
+          {" "}
           {sponsors.map(({ icon, name }) => (
             <div
               key={name}
               className="flex items-center text-xl md:text-2xl font-medium"
             >
-              <Image
-                src={icon}
-                width={0}
-                height={0}
-                className="h-auto w-16 md:w-24"
-                alt="icon"
-              />
+              {/* Fix safari rendering base64 svg images in low quality  */}
+              <object type="image/svg+xml" data={icon} />
             </div>
           ))}
         </Marquee>

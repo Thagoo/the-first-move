@@ -8,7 +8,7 @@ import EventForm from "../form";
 
 export default function PricingHero() {
   return (
-    <div className="md:max-w-screen-lg mx-auto px-5 relative  flex justify-center flex-col ">
+    <div className="md:max-w-screen-lg mx-auto px-5 relative flex justify-center flex-col py-10">
       <ParallaxProvider>
         <Parallax speed={-8} opacity={[2, 0]}>
           <div className="flex gap-2 md:gap-6 justify-center md:px-20 py-16 ">
@@ -44,7 +44,7 @@ export default function PricingHero() {
 
       <div className="max-w-screen mx-auto text-center space-y-6">
         <div>
-          <h1 className="text-2xl md:text-4xl font-bold">
+          <h1 className="text-2xl md:text-4xl font-medium">
             We help you make The First Move!
           </h1>
           <p className="text-lg text-muted-foreground">
