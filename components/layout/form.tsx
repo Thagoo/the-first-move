@@ -113,7 +113,7 @@ export default function EventForm({
     // Do something with the form values.
     // ✅ This will be type-safe and validated.
     setLoading(true);
-    if (values.event == "other") {
+    if (values.event == "Other") {
       if (values.eventOther.length < 4) {
         form.setError("eventOther", {
           type: "manual",
@@ -350,7 +350,7 @@ export default function EventForm({
                 )}
               />
 
-              {form.watch("event") == "other" && (
+              {form.watch("event") == "Other" && (
                 <FormField
                   control={form.control}
                   name="eventOther"
