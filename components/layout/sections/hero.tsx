@@ -54,7 +54,7 @@ export const HeroSection = () => {
         </Parallax>
       </ParallaxProvider>
       <div className="space-y-4 md:space-y-0 md:space-x-4">
-        <EventForm showTrigger={true} />
+        <EventForm showTrigger={true} buttonTitle={"Plan with Us"} />
       </div>
     </section>
   );

@@ -83,12 +83,15 @@ const supportedEvents = [
 interface EventFormProps {
   showForm: boolean;
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
+  showTrigger: Boolean;
+  buttonTitle: String;
 }
 
 export default function EventForm({
   showForm,
   setShowForm,
   showTrigger,
+  buttonTitle,
 }: EventFormProps) {
   const [alertOpen, setAlertOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -191,7 +194,7 @@ export default function EventForm({
               variant="secondary"
               className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary duration-200 rounded-full border-primary border  "
             >
-              Plan with us!
+              {buttonTitle}
             </Button>
           </DialogTrigger>
         )}
@@ -215,7 +218,7 @@ export default function EventForm({
             </DialogDescription>
           </DialogHeader>
           <Form {...form}>
-            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
               <FormField
                 control={form.control}
                 name="name"

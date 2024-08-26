@@ -15,10 +15,10 @@ export const FooterSection = () => {
         </div>
         <div className=" grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8">
           <div className="flex flex-col gap-2">
-            <h3 className="font-medium text-lg">Contact</h3>
+            <h3 className="font-medium text-lg">Contact Us</h3>
             <div>
               <Link
-                href="mailto:hi@thefirstmove.in"
+                href="https://wa.link/oij5rd"
                 className="opacity-60 hover:opacity-100"
               >
                 hi@thefirstmove.in
@@ -27,15 +27,23 @@ export const FooterSection = () => {
 
             <div>
               <Link
-                href="tele:+916360662716"
+                href="https://wa.link/oij5rd"
                 className="opacity-60 hover:opacity-100"
               >
                 +91 63606 62716
               </Link>
             </div>
+            <div>
+              <Link
+                href="https://wa.link/oij5rd"
+                className="opacity-60 hover:opacity-100"
+              >
+                Dongle Desk Indiranagar Bangalore, Karnataka 560038
+              </Link>
+            </div>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-2 cursor-default">
             <h3 className="font-medium text-lg">Services</h3>
             <div>
               <p className="opacity-60 ">Wedding Planning</p>
@@ -77,21 +85,10 @@ export const FooterSection = () => {
                 Blogs
               </Link>
             </div>
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Contact Us
-              </Link>
-            </div>
 
             <div>
               <Link href="#" className="opacity-60 hover:opacity-100">
                 FAQ
-              </Link>
-            </div>
-
-            <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
-                Feedback
               </Link>
             </div>
           </div>

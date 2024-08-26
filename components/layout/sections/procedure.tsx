@@ -18,7 +18,7 @@ const stepsData: StepsData[] = [
     id: 1,
   },
   {
-    title: "We will send a customized quote",
+    title: "Ge a customized quote",
     desc: "Our  team of celebration experts will customize a quotation just for you as per your requirement and send it to you ",
     id: 2,
   },

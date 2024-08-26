@@ -10,27 +10,27 @@ interface ServicesProps {
 const serviceList: ServicesProps[] = [
   {
     icon: "/proposal/services/_0.webp",
-    description: "Decor Ideas Explored",
-  },
-  {
-    icon: "/proposal/services/_1.webp",
-    description: "Best Proposal Planners",
+    description: "Proposal Decor",
   },
   {
     icon: "/proposal/services/_2.webp",
-    description: "Celebrations Organized ",
-  },
-  {
-    icon: "/proposal/services/_3.webp",
-    description: "Decor Ideas Explored",
+    description: "Candid Photography",
   },
   {
     icon: "/proposal/services/_4.webp",
-    description: "Best Proposal Planners",
+    description: "Ring Shopping",
+  },
+  {
+    icon: "/proposal/services/_1.webp",
+    description: "Customized Cakes",
   },
   {
     icon: "/proposal/services/_5.webp",
-    description: "Celebrations Organized ",
+    description: "Serene Venues",
+  },
+  {
+    icon: "/proposal/services/_3.webp",
+    description: "and much more...",
   },
 ];
 
@@ -39,7 +39,7 @@ const Services = () => {
     <section id="services" className="container py-10 space-y-10">
       <div className="max-w-lg mx-auto text-center ">
         <h1 className="text-2xl md:text-4xl font-medium">
-          <span className="text-transparent bg-gradient-to-r from-[#F7BBAA] to-[#F7BBAA] via-primary dark:from-[hsl(16,100%,59%)] bg-clip-text font-medium px-2">
+          <span className="text-transparent bg-gradient-to-r from-[#F7BBAA] to-[#F7BBAA] dark:from-[hsl(16,100%,59%)] bg-clip-text font-medium px-2">
             Personalized Services
           </span>{" "}
           for your Unique Love Story
