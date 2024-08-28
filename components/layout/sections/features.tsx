@@ -31,7 +31,7 @@ const featureList: FeaturesProps[] = [
     url: "/proposal",
   },
   {
-    icon: "/icons/photography.webp",
+    icon: "/icons/photography.svg",
     title: "Photography",
     description:
       "Our skilled photographers capture every emotion and detail, creating timeless images you'll cherish forever.",
@@ -83,21 +83,22 @@ export const FeaturesSection = () => {
         fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
         facere tenetur.
       </h3> */}
-      <div className="w-full flex justify-center items-center gap-2 md:gap-4">
-        <img
+      <div className=" flex justify-center items-center gap-2 md:gap-4">
+        <Image
           width={0}
           height={0}
           className="md:w-20 w-12 h-auto"
           src={"/icons/divider-bottom.svg"}
           alt="dashboard"
+          priority
         />
         <h1 className="text-3xl md:text-4xl text-center font-medium mb-4 text-nowrap">
           Events We Plan
         </h1>
 
         <Image
-          width={0}
-          height={0}
+          width={1000}
+          height={1000}
           className="md:w-20 w-12 h-auto scale-x-[-1]"
           src={"/icons/divider-bottom.svg"}
           alt="dashboard"
@@ -110,17 +111,16 @@ export const FeaturesSection = () => {
             className="cursor-pointer group"
             onClick={() => (url ? router.push(url) : setShowForm(true))}
           >
-            <Card className="h-full bg-background border-0 shadow-none">
-              <CardHeader className="flex justify-center items-center transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-200 cursor-pointer">
-                <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
-                  <img
-                    src={icon}
-                    width={0}
-                    height={0}
-                    className="md:w-40 h-auto w-24"
-                    alt="icon"
-                  />
-                </div>
+            <Card className="bg-background border-0 shadow-none">
+              <CardHeader className="flex flex-col justify-center items-center transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-200 cursor-pointer">
+                <Image
+                  src={icon}
+                  width={1000}
+                  height={1000}
+                  className="md:w-40 h-auto w-24 bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4"
+                  alt="icon"
+                  priority
+                />
 
                 <CardTitle>{title}</CardTitle>
               </CardHeader>

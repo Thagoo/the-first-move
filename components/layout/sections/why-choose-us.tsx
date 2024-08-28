@@ -98,15 +98,6 @@ export default function WhyChooseUsSection() {
           </div>
         ))}
       </div>
-      <div className="flex justify-center mt-10">
-        <Image
-          width={0}
-          height={0}
-          className="w-52 h-auto "
-          src={"/icons/divider-top-hero.svg"}
-          alt="dashboard"
-        />
-      </div>
     </section>
   );
 }

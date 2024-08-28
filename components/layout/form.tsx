@@ -55,6 +55,8 @@ import {
 } from "../ui/alert-dialog";
 import { eventBooking } from "@/lib/action";
 import { Loader2 } from "lucide-react";
+import Image from "next/image";
+import WhatsAppButton from "../ui/whatsapp-button";
 
 const formSchema = z.object({
   name: z.string().min(2, "Please enter a valid name").max(50),
@@ -84,14 +86,14 @@ interface EventFormProps {
   showForm: boolean;
   setShowForm: React.Dispatch<React.SetStateAction<boolean>>;
   showTrigger: Boolean;
-  buttonTitle: String;
+  toggleTitle: String;
 }
 
 export default function EventForm({
   showForm,
   setShowForm,
   showTrigger,
-  buttonTitle,
+  toggleTitle,
 }: EventFormProps) {
   const [alertOpen, setAlertOpen] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -173,7 +175,7 @@ export default function EventForm({
     <div>
       <AlertDialog open={alertOpen} onOpenChange={setAlertOpen}>
         <AlertDialogContent>
-          <AlertDialogHeader>
+          <AlertDialogHeader className="flex flex-col items-center">
             <AlertDialogTitle>
               Success! Thank you for sending your details!
             </AlertDialogTitle>
@@ -181,6 +183,7 @@ export default function EventForm({
               Our celebration experts will get in touch with you within 24
               hours!
             </AlertDialogDescription>
+            <WhatsAppButton />
           </AlertDialogHeader>
           <AlertDialogFooter>
             <AlertDialogCancel>Thanks</AlertDialogCancel>
@@ -192,23 +195,25 @@ export default function EventForm({
           <DialogTrigger asChild className="max-w-md mx-auto flex">
             <Button
               variant="secondary"
-              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary duration-200 rounded-full border-primary border  "
+              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:shadow-xl duration-200 rounded-full border-primary border  "
             >
-              {buttonTitle}
+              {toggleTitle}
             </Button>
           </DialogTrigger>
         )}
-        <DialogTrigger asChild>
-          <Button
-            style={{ backgroundColor: "white" }}
-            variant="secondary"
-            className={` px-8 py-4 font-medium md:text-xl shadow-safari fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 drop-shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary duration-200 rounded-full border-primary border ${
-              showButton ? " opacity-100 fade-in-30" : "opacity-0"
-            }`}
-          >
-            Plan with us!
-          </Button>
-        </DialogTrigger>
+        {!showTrigger && (
+          <DialogTrigger asChild>
+            <Button
+              style={{ backgroundColor: "white" }}
+              variant="secondary"
+              className={` px-8 py-4 font-medium md:text-xl shadow-safari fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 drop-shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary duration-200 rounded-full border-primary border ${
+                showButton ? " opacity-100 fade-in-30" : "opacity-0"
+              }`}
+            >
+              Plan with us!
+            </Button>
+          </DialogTrigger>
+        )}
         <DialogContent className="px-4">
           <DialogHeader>
             <DialogTitle>Get a customized quote from us!</DialogTitle>
@@ -385,9 +390,16 @@ export default function EventForm({
               </Button>
             </form>
           </Form>
-          <DialogTitle className="text-center text-2xl text-primary mt-4">
-            TheFirstMove
-          </DialogTitle>
+          <DialogFooter className=" max-w-md mx-auto max-h-12">
+            <Image
+              src={"/tfm-logo.svg"}
+              width={100}
+              height={50}
+              alt="logo"
+              priority
+              quality={100}
+            />
+          </DialogFooter>
         </DialogContent>
       </Dialog>
     </div>

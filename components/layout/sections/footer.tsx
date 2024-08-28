@@ -6,7 +6,7 @@ export const FooterSection = () => {
   return (
     <footer
       id="footer"
-      className=" py-10 bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100"
+      className=" bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100"
     >
       <div className="conatiner mx-auto md:p-10 p-4 rounded-2xl">
         <div className="pb-4 md:pb-8">
@@ -97,7 +97,7 @@ export const FooterSection = () => {
             <h3 className="font-medium text-lg">Socials</h3>
             <div>
               <Link
-                href="@thefirsttmove.in"
+                href="https://www.instagram.com/thefirsttmove?igsh=MTFsYmR5a3VrY3k0aQ%3D%3D&utm_source=qr"
                 className="opacity-60 hover:opacity-100"
               >
                 Instagram

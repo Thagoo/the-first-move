@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 import EventForm from "../form";
 import { ParallaxProvider, Parallax } from "react-scroll-parallax";
 import { DM_Sans } from "next/font/google";
+import { Divider } from "@/components/ui/divider";
 const font = DM_Sans({ subsets: ["latin"], weight: "600" });
 
 export const HeroSection = () => {
@@ -14,14 +15,7 @@ export const HeroSection = () => {
       <ParallaxProvider>
         <Parallax speed={-10} opacity={[2, 0]}>
           <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto py-20">
-            <Image
-              width={0}
-              height={0}
-              className="w-52 h-auto "
-              src={"/icons/divider-top-hero.svg"}
-              alt="dashboard"
-            />
-
+            <Divider />
             <div className="text-center space-y-8">
               <h1 className="md:text-lg text-center mb-2 tracking-wider">
                 <span> Trusted Planners for Glorious Events </span>
@@ -54,7 +48,7 @@ export const HeroSection = () => {
         </Parallax>
       </ParallaxProvider>
       <div className="space-y-4 md:space-y-0 md:space-x-4">
-        <EventForm showTrigger={true} buttonTitle={"Plan with Us"} />
+        <EventForm showTrigger={true} toggleTitle={"Plan with Us"} />
       </div>
     </section>
   );

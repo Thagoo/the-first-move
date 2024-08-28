@@ -22,6 +22,7 @@ import { Button } from "../ui/button";
 import Link from "next/link";
 import Image from "next/image";
 import { ToggleTheme } from "./toogle-theme";
+import EventForm from "./form";
 
 interface RouteProps {
   href: string;
@@ -36,16 +37,16 @@ interface FeatureProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#features",
+    href: "/#features",
     label: "Services",
   },
   {
-    href: "#team",
+    href: "/about",
     label: "About Us",
   },
 
   {
-    href: "#faq",
+    href: "/#faq",
     label: "FAQ",
   },
 ];
@@ -75,10 +76,16 @@ const featureList: FeatureProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-md bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center px-4 py-2 bg-transparent">
+    <header className="shadow-md bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center px-2 pr-6 md:pr-2 bg-transparent max-h-14">
       <Link href="/" className="font-medium text-lg flex items-center">
-        <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-        TheFirstMove
+        <Image
+          src={"/tfm-logo.svg"}
+          width={100}
+          height={0}
+          alt="logo"
+          priority
+          quality={100}
+        />
       </Link>
       {/* <!-- Mobile --> */}
       <div className="flex items-center lg:hidden">
@@ -122,12 +129,7 @@ export const Navbar = () => {
             <SheetFooter className="flex-col sm:flex-col justify-start items-start">
               <Separator className="mb-2" />
 
-              <Button
-                variant="secondary"
-                className=" font-medium rounded-full border-[1px] border-[#65ABB7]"
-              >
-                <Link href="https://wa.link/oij5rd">Contact Us</Link>
-              </Button>
+              <EventForm showTrigger={true} toggleTitle={"Contact Us"} />
             </SheetFooter>
           </SheetContent>
         </Sheet>
@@ -185,12 +187,7 @@ export const Navbar = () => {
       </NavigationMenu>
 
       <div className="hidden lg:flex">
-        <Button
-          variant="secondary"
-          className="bg-transparent transition ease-in-out delay-150 hover:bg-primary duration-200 rounded-full border-primary border  "
-        >
-          <Link href="https://wa.link/oij5rd">Contact Us</Link>
-        </Button>
+        <EventForm showTrigger={true} toggleTitle={"Contact Us"} />
       </div>
     </header>
   );
