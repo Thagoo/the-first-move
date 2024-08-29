@@ -76,11 +76,11 @@ const featureList: FeatureProps[] = [
 export const Navbar = () => {
   const [isOpen, setIsOpen] = React.useState(false);
   return (
-    <header className="shadow-md bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center px-2 pr-6 md:pr-2 bg-transparent max-h-14">
+    <header className="shadow-lg bg-opacity-25 backdrop-filter backdrop-blur-lg w-[90%] md:w-[40%] lg:w-[45%] lg:max-w-screen-md top-4 md:top-5 mx-auto sticky border border-secondary z-40 rounded-full flex justify-between items-center md:px-2 px-6 md:pl-6 py-2 bg-transparent">
       <Link href="/" className="font-medium text-lg flex items-center">
         <Image
-          src={"/tfm-logo.svg"}
-          width={100}
+          src={"/tfm-logo.png"}
+          width={80}
           height={0}
           alt="logo"
           priority
@@ -105,10 +105,17 @@ export const Navbar = () => {
               <SheetHeader className="mb-4 ml-4">
                 <SheetTitle className="flex items-center">
                   <Link href="/" className="flex items-center">
-                    <ChevronsDown className="bg-gradient-to-tr border-secondary from-primary via-primary/70 to-primary rounded-lg w-9 h-9 mr-2 border text-white" />
-                    TheFirstMove
+                    <Image
+                      src={"/tfm-logo.png"}
+                      width={100}
+                      height={0}
+                      alt="logo"
+                      priority
+                      quality={100}
+                    />
                   </Link>
                 </SheetTitle>
+                <Separator />
               </SheetHeader>
 
               <div className="flex flex-col gap-2">

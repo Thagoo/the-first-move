@@ -206,3 +206,8 @@ input[type="number"] {
   filter: none;
   -webkit-filter: blur(0px);
 }
+
+button {
+  outline: none !important;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}

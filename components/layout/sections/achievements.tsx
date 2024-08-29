@@ -30,7 +30,7 @@ export default function Achievements() {
   return (
     <section
       id="achievements"
-      className="container w-full flex flex-col justify-center items-center gap-10 md:gap-10"
+      className="container w-full flex flex-col justify-center items-center gap-10 md:gap-10 pt-10"
     >
       <div className="grid md:grid-cols-3 md:gap-2 gap-10 px-5">
         {achievementList.map(({ icon, title, description }) => (

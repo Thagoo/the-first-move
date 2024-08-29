@@ -6,7 +6,7 @@ export const FooterSection = () => {
   return (
     <footer
       id="footer"
-      className=" bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100"
+      className=" bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100 pt-10"
     >
       <div className="conatiner mx-auto md:p-10 p-4 rounded-2xl">
         <div className="pb-4 md:pb-8">
@@ -18,7 +18,7 @@ export const FooterSection = () => {
             <h3 className="font-medium text-lg">Contact Us</h3>
             <div>
               <Link
-                href="https://wa.link/oij5rd"
+                href="mailto:hi@thefirstmove.in"
                 className="opacity-60 hover:opacity-100"
               >
                 hi@thefirstmove.in
@@ -76,7 +76,7 @@ export const FooterSection = () => {
           <div className="flex flex-col gap-2">
             <h3 className="font-medium text-lg">Help</h3>
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
+              <Link href="/about" className="opacity-60 hover:opacity-100">
                 About Us
               </Link>
             </div>
@@ -87,7 +87,7 @@ export const FooterSection = () => {
             </div>
 
             <div>
-              <Link href="#" className="opacity-60 hover:opacity-100">
+              <Link href="/#faq" className="opacity-60 hover:opacity-100">
                 FAQ
               </Link>
             </div>

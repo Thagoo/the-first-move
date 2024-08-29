@@ -33,7 +33,7 @@ const featureList: WhyChooseUsProps[] = [
 
 export default function WhyChooseUsSection() {
   return (
-    <section id="whyChooseUs" className="container mx-auto">
+    <section id="whyChooseUs" className="container mx-auto pt-10">
       {/* <h2 className="text-lg text-primary text-center mb-2 tracking-wider">
         WhyChooseUs
       </h2>
@@ -56,7 +56,7 @@ export default function WhyChooseUsSection() {
             src={"/icons/divider-bottom.svg"}
             alt="dashboard"
           />
-          <h1 className="text-2xl md:text-4xl text-center font-medium mb-4 text-nowrap">
+          <h1 className="text-2xl md:text-4xl text-center font-medium text-nowrap">
             Why Choose Us
           </h1>
 
@@ -73,10 +73,10 @@ export default function WhyChooseUsSection() {
         </p>
       </div>
 
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
         {featureList.map(({ icon, title, description }) => (
           <div key={title}>
-            <Card className="h-full bg-background border-0 shadow-none text-center">
+            <Card className="h-full bg-background text-center border border-primary/40">
               <CardHeader className="flex justify-center items-center">
                 <div className="bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4">
                   <Image
