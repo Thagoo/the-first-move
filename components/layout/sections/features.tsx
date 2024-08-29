@@ -42,7 +42,7 @@ const featureList: FeaturesProps[] = [
     title: "Make Up Artists",
     description:
       "Our expert makeup artists enhance your features and create a stunning  look that captures your essence.",
-    url: "#",
+    url: "",
   },
   {
     icon: "/icons/PS5.webp",
@@ -64,7 +64,7 @@ export const FeaturesSection = () => {
   const [showForm, setShowForm] = useState(false);
   const router = useRouter();
   return (
-    <section id="features" className="container py-10">
+    <section id="features" className="container pt-20">
       <EventForm
         showForm={showForm}
         setShowForm={setShowForm}
@@ -83,7 +83,7 @@ export const FeaturesSection = () => {
         fugiat, odit similique quasi sint reiciendis quidem iure veritatis optio
         facere tenetur.
       </h3> */}
-      <div className=" flex justify-center items-center gap-2 md:gap-4">
+      <div className="flex justify-center items-center gap-2 md:gap-4 pb-4">
         <Image
           width={0}
           height={0}
@@ -104,20 +104,20 @@ export const FeaturesSection = () => {
           alt="dashboard"
         />
       </div>
-      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-6xl mx-auto">
         {featureList.map(({ icon, title, description, url }) => (
           <div
             key={title}
             className="cursor-pointer group"
             onClick={() => (url ? router.push(url) : setShowForm(true))}
           >
-            <Card className="bg-background border-0 shadow-none">
+            <Card className="bg-background shadow border">
               <CardHeader className="flex flex-col justify-center items-center transition ease-in-out delay-150 group-hover:-translate-y-1 group-hover:scale-110 duration-200 cursor-pointer">
                 <Image
                   src={icon}
                   width={1000}
                   height={1000}
-                  className="md:w-40 h-auto w-24 bg-primary/20 p-2 rounded-full ring-8 ring-primary/10 mb-4"
+                  className="md:w-40 h-auto w-24 p-2 rounded-full bg-primary/20 ring-8 ring-primary/10 mb-4"
                   alt="icon"
                   priority
                 />

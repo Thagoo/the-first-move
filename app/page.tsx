@@ -1,3 +1,4 @@
+import FloatingButton from "@/components/floating-button";
 import Achievements from "@/components/layout/sections/achievements";
 import { FAQSection } from "@/components/layout/sections/faq";
 import { FeaturesSection } from "@/components/layout/sections/features";
@@ -10,6 +11,7 @@ import WhyChooseUsSection from "@/components/layout/sections/why-choose-us";
 export default function Home() {
   return (
     <>
+      <FloatingButton />
       <HeroSection />
       <FeaturesSection />
       <Achievements />

@@ -46,7 +46,7 @@ const Services = () => {
         </h1>
       </div>
 
-      <div className=" grid grid-cols-2 lg:grid-cols-6 gap-4">
+      <div className=" grid grid-cols-2 lg:grid-cols-6 gap-4 max-w-6xl mx-auto">
         {serviceList.map(({ icon, description }) => (
           <div
             key={icon}
@@ -58,7 +58,7 @@ const Services = () => {
                 width={400}
                 height={400}
                 alt="icon"
-                className="rounded-full w-24 h-auto z-20 relative"
+                className="rounded-full w-24 h-auto z-20 relative "
               />
               <div className="absolute w-24 h-24 -inset-1 blur-lg bg-gradient-to-r from-[#F7BBAA] to-[#F7BBAA] z-0 rounded-full"></div>
             </div>

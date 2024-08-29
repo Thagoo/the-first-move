@@ -80,7 +80,7 @@ export default function About() {
                 What We Do
               </h2>
               <div className="space-y-8">
-                <div className="p-4 sm:p-6 bg-white shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-white shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Modern Event Planning
                   </h3>
@@ -98,7 +98,7 @@ export default function About() {
                     expertise to bring your vision to life.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-white shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-white shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Sustainable Event Solutions
                   </h3>
@@ -113,7 +113,7 @@ export default function About() {
                     to a healthier planet.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-white shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-white shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Proposal Planning
                   </h3>
@@ -128,7 +128,7 @@ export default function About() {
                     creativity.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-white shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-white shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Wedding Planning
                   </h3>
@@ -143,7 +143,7 @@ export default function About() {
                     on celebrating your love.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-white shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-white shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Birthday Planning
                   </h3>
@@ -166,7 +166,7 @@ export default function About() {
                 Why Choose Us?
               </h2>
               <div className="space-y-8">
-                <div className="p-4 sm:p-6 bg-teal-50 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-teal-50 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Personalized Service
                   </h3>
@@ -182,7 +182,7 @@ export default function About() {
                     customized to reflect your personality and style.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-teal-50 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-teal-50 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Expertise and Experience
                   </h3>
@@ -194,7 +194,7 @@ export default function About() {
                     results, no matter how big or small your event may be.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-teal-50 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-teal-50 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Attention to Detail
                   </h3>
@@ -206,7 +206,7 @@ export default function About() {
                     vision and exceeds your expectations.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-teal-50 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-teal-50 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Commitment to Sustainability
                   </h3>
@@ -230,7 +230,7 @@ export default function About() {
                 Our Process
               </h2>
               <div className="space-y-8">
-                <div className="p-4 sm:p-6 bg-gray-100 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-gray-100 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Consultation
                   </h3>
@@ -242,7 +242,7 @@ export default function About() {
                     budget.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-gray-100 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-gray-100 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Planning and Design
                   </h3>
@@ -255,7 +255,7 @@ export default function About() {
                     sustainable practices.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-gray-100 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-gray-100 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Execution
                   </h3>
@@ -267,7 +267,7 @@ export default function About() {
                     your special day.
                   </p>
                 </div>
-                <div className="p-4 sm:p-6 bg-gray-100 shadow-lg rounded-lg">
+                <div className="p-4 sm:p-6 bg-gray-100 shadow border rounded-lg">
                   <h3 className="text-2xl sm:text-3xl font-medium text-teal-600">
                     Post-Event Follow-Up
                   </h3>

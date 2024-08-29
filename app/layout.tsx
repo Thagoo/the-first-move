@@ -4,12 +4,28 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Navbar } from "@/components/layout/navbar";
 import { ThemeProvider } from "@/components/layout/theme-provider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const font = Oxygen({ subsets: ["latin"], weight: "400" });
 
 export const metadata: Metadata = {
-  title: "The First Move",
+  title: { template: `%s | The First Move`, default: "The First Move" },
   description: "Trusted Planners for Glorious Events",
+  metadataBase: new URL("https://the-first-move.vercel.app"),
+  openGraph: {
+    images: "/tfm-logo.png",
+    title: "The First Move",
+    description: "Crafting Unforgettable Luxury Celebrations",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+  keywords: [
+    "thefirstmove",
+    "the first move",
+    "event organisations",
+    "event planners",
+  ],
 };
 
 export default function RootLayout({
@@ -19,6 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
+      <GoogleAnalytics gaId="G-BNMH7QMR4C" />
       <body className={cn("min-h-dvh bg-background", font.className)}>
         <ThemeProvider
           attribute="class"

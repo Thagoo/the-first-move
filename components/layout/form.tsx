@@ -57,6 +57,7 @@ import { eventBooking } from "@/lib/action";
 import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import WhatsAppButton from "../ui/whatsapp-button";
+import { twMerge } from "tailwind-merge";
 
 const formSchema = z.object({
   name: z.string().min(2, "Please enter a valid name").max(50),
@@ -98,8 +99,7 @@ export default function EventForm({
   const [alertOpen, setAlertOpen] = useState(false);
   const [loading, setLoading] = useState(false);
   const dialogRef = useRef(null);
-
-  const [showButton, setShowButton] = useState(false);
+  const datePickerRef = useRef(null);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -153,24 +153,6 @@ export default function EventForm({
     }
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 300) {
-        // Show button after scrolling down 300px
-        setShowButton(true);
-      } else {
-        setShowButton(false);
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    // Cleanup event listener on component unmount
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div>
       <AlertDialog open={alertOpen} onOpenChange={setAlertOpen}>
@@ -195,25 +177,13 @@ export default function EventForm({
           <DialogTrigger asChild className="max-w-md mx-auto flex">
             <Button
               variant="secondary"
-              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:shadow-xl duration-200 rounded-full border-primary border  "
+              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary hover:shadow-xl hover:shadow-safari duration-200 rounded-full border-primary border  "
             >
               {toggleTitle}
             </Button>
           </DialogTrigger>
         )}
-        {!showTrigger && (
-          <DialogTrigger asChild>
-            <Button
-              style={{ backgroundColor: "white" }}
-              variant="secondary"
-              className={` px-8 py-4 font-medium md:text-xl shadow-safari fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50 drop-shadow-xl transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-primary duration-200 rounded-full border-primary border ${
-                showButton ? " opacity-100 fade-in-30" : "opacity-0"
-              }`}
-            >
-              Plan with us!
-            </Button>
-          </DialogTrigger>
-        )}
+
         <DialogContent className="px-4">
           <DialogHeader>
             <DialogTitle>Get a customized quote from us!</DialogTitle>
@@ -282,7 +252,7 @@ export default function EventForm({
                 render={({ field }) => (
                   <FormItem className="flex flex-col">
                     <Popover>
-                      <PopoverTrigger asChild>
+                      <PopoverTrigger asChild ref={datePickerRef}>
                         <FormControl>
                           <Button
                             variant={"outline"}
@@ -296,6 +266,7 @@ export default function EventForm({
                             ) : (
                               <span>Pick event date</span>
                             )}
+
                             <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                           </Button>
                         </FormControl>
@@ -304,7 +275,10 @@ export default function EventForm({
                         <Calendar
                           mode="single"
                           selected={field.value}
-                          onSelect={field.onChange}
+                          onSelect={(date) => {
+                            field.onChange(date);
+                            datePickerRef?.current.click();
+                          }}
                           disabled={(date) => date < new Date()}
                         />
                       </PopoverContent>
@@ -375,9 +349,8 @@ export default function EventForm({
               )}
               <DialogClose className="invisible" ref={dialogRef}></DialogClose>
               <Button
-                type="submit"
-                variant="outline"
-                className={`mx-auto w-full `}
+                variant="default"
+                className={twMerge(`mx-auto w-full !text-white`)}
                 disabled={!form.formState.isValid || loading}
               >
                 {loading ? (
@@ -390,11 +363,11 @@ export default function EventForm({
               </Button>
             </form>
           </Form>
-          <DialogFooter className=" max-w-md mx-auto max-h-12">
+          <DialogFooter className="max-w-md mx-auto">
             <Image
-              src={"/tfm-logo.svg"}
+              src={"/tfm-logo.png"}
               width={100}
-              height={50}
+              height={0}
               alt="logo"
               priority
               quality={100}

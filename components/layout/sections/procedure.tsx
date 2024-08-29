@@ -18,7 +18,7 @@ const stepsData: StepsData[] = [
     id: 1,
   },
   {
-    title: "Ge a customized quote",
+    title: "Get a customized quote",
     desc: "Our  team of celebration experts will customize a quotation just for you as per your requirement and send it to you ",
     id: 2,
   },
@@ -67,8 +67,8 @@ const ProcedureSection = () => {
   //   }, [data]);
 
   return (
-    <div className="relative min-h-[400vh]">
-      <div className="invisible h-[400vh] absolute flex flex-col jusitfy-between">
+    <div className="relative min-h-[200vh]">
+      <div className="invisible h-dvh md:[150vh] absolute flex flex-col jusitfy-between">
         <Scrollama
           onStepEnter={onStepEnter}
           onStepExit={onStepExit}
@@ -119,7 +119,7 @@ const ProcedureSection = () => {
             Booking your celebration was never this easy!
           </p>
         </div>
-        <div className="md:flex-1 grid md:grid-cols-2 md:pt-20 px-5 md:px-20 w-full gap-2 md:gap-0">
+        <div className="md:flex-1 grid md:grid-cols-2 md:pt-10 px-5 md:px-20 w-full gap-2 md:gap-0">
           <div className="md:order-1 order-2 flex flex-col w-full animate-in duration-300">
             {stepsData.map((item, i) => (
               <section
@@ -157,7 +157,7 @@ const ProcedureSection = () => {
                     animate={step == item.id ? "large" : "small"}
                     variants={{
                       large: {
-                        fontSize: "3vh",
+                        fontSize: "4vh",
                       },
                       small: {
                         fontSize: "2.5vh",
