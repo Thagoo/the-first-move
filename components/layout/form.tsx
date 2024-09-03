@@ -58,6 +58,7 @@ import { Loader2 } from "lucide-react";
 import Image from "next/image";
 import WhatsAppButton from "../ui/whatsapp-button";
 import { twMerge } from "tailwind-merge";
+import { sendGAEvent } from "@next/third-parties/google";
 
 const formSchema = z.object({
   name: z.string().min(2, "Please enter a valid name").max(50),
@@ -168,7 +169,15 @@ export default function EventForm({
             <WhatsAppButton />
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Thanks</AlertDialogCancel>
+            <AlertDialogCancel
+              onClick={() =>
+                sendGAEvent("event", "buttonClicked", {
+                  value: "Success dialog closed",
+                })
+              }
+            >
+              Thanks
+            </AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>

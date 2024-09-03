@@ -28,8 +28,6 @@ export const metadata: Metadata = {
   ],
 };
 
-const GA_ID = process.env.GA_ID;
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -37,7 +35,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br" suppressHydrationWarning>
-      <GoogleAnalytics gaId={GA_ID} />
+      <GoogleAnalytics gaId="G-BNMH7QMR4C" />
       <body className={cn("min-h-dvh bg-background", font.className)}>
         <ThemeProvider
           attribute="class"

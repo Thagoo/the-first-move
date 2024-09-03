@@ -4,9 +4,11 @@
 import { GoogleSpreadsheet } from "google-spreadsheet";
 import { JWT } from "google-auth-library";
 
-export async function eventBooking(data) {
-  const sheetId = process.env.SHEET_ID;
+const sheetId = process.env.SHEET_ID as string;
+const CLIENT_EMAIL = process.env.CLIENT_EMAIL;
+const KEY = process.env.KEY;
 
+export async function eventBooking(data) {
   const newData = {
     ...data,
     dateOfEvent: new Date(data.dateOfEvent).toLocaleDateString("en-US", {
@@ -18,8 +20,8 @@ export async function eventBooking(data) {
 
   try {
     const serviceAccountAuth = new JWT({
-      email: process.env.CLIENT_EMAIL,
-      key: process.env.KEY,
+      email: CLIENT_EMAIL,
+      key: KEY,
       scopes: ["https://www.googleapis.com/auth/spreadsheets"],
     });
     const doc = new GoogleSpreadsheet(sheetId, serviceAccountAuth);
@@ -28,6 +30,7 @@ export async function eventBooking(data) {
     const sheet = doc.sheetsByIndex[0]; // Assuming data is in the first sheet
     await sheet.loadCells(); // Load the cells of the sheet
     const rows = await sheet.getRows();
+
     const exists = rows.some((row) => row._rawData.includes(newData.phone));
 
     if (exists) {
@@ -44,6 +47,8 @@ export async function eventBooking(data) {
       Event: newData.event,
       City: newData.city,
     });
-    // await sheet.addRow(data);
-  } catch (error) {}
+    await sheet.addRow(data);
+  } catch (error) {
+    console.log(error);
+  }
 }
