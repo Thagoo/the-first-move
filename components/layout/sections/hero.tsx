@@ -11,9 +11,9 @@ const font = DM_Sans({ subsets: ["latin"], weight: "600" });
 
 export const HeroSection = () => {
   return (
-    <section className="container relative bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100">
+    <section className="w-full relative bg-gradient-to-b from-transparent from-0% to-100% via-cyan-100">
       <ParallaxProvider>
-        <Parallax speed={-10} opacity={[4, 0]}>
+        <Parallax className="container" speed={-10} opacity={[4, 0]}>
           <div className="grid place-items-center lg:max-w-screen-xl gap-8 mx-auto pt-10">
             <Divider />
             <div className="text-center space-y-4">

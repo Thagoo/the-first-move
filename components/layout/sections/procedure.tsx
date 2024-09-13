@@ -67,7 +67,7 @@ const ProcedureSection = () => {
   //   }, [data]);
 
   return (
-    <div className="relative min-h-[200vh]">
+    <div className="container relative min-h-[200vh]">
       <div className="invisible h-dvh md:[150vh] absolute flex flex-col jusitfy-between">
         <Scrollama
           onStepEnter={onStepEnter}
